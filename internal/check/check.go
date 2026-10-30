@@ -6,8 +6,6 @@ import (
 	"net"
 	"net/http"
 	"time"
-
-	"github.com/go-playground/locales/or"
 )
 
 // Result is the outcome of one check.

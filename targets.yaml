@@ -15,4 +15,4 @@ targets:
     address: 127.0.0.1:9
   - name: src-dash
     kind: http
-    address: 192.168.1.217:8080
+    address: http://192.168.1.217:8080
