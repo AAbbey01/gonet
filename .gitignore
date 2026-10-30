@@ -5,3 +5,4 @@
 coverage.out
 # editor
 .vscode/
+metrics_full.txt
