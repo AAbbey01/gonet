@@ -50,13 +50,17 @@ func checkHTTP(ctx context.Context, url string) error {
 	// TODO: req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	// resp, err := http.DefaultClient.Do(req); always defer resp.Body.Close()
 	// return an error when resp.StatusCode >= 400
-	req, err := http.NewRequestWithContext(ctx,http.MethodGet, url, nil)
-	resp, err := http.DefaultClient.Do(req)
+	req, err := http.NewRequestWithContext(ctx,http.MethodGet, url, nil); if err != nil{
+		return fmt.Errorf("build request: %w", err)
+	}
+	resp, err := http.DefaultClient.Do(req); if err != nil{
+		return fmt.Errorf("requst: %w",err)
+	}
+	defer resp.Body.Close()
 	if resp.StatusCode >= 400{
-		return fmt.Errorf("Error code %d: %w",resp.StatusCode,err)
+		return fmt.Errorf("Status %d",resp.StatusCode)
 	}
 	
-	defer resp.Body.Close()
 
 	return nil
 }
