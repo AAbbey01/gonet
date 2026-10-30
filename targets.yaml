@@ -1,0 +1,18 @@
+interval: 30s
+timeout: 5s
+targets:
+  - name: cloudflare
+    kind: tcp
+    address: 1.1.1.1:443
+  - name: github
+    kind: http
+    address: https://github.com
+  - name: example
+    kind: dns
+    address: example.com
+  - name: closed-port
+    kind: tcp
+    address: 127.0.0.1:9
+  - name: src-dash
+    kind: http
+    address: 192.168.1.217:8080
