@@ -1,0 +1,7 @@
+# build output
+/gonet
+*.exe
+# test output
+coverage.out
+# editor
+.vscode/
